@@ -24,7 +24,7 @@ pipeline {
                 stage('Clone Repo') {
                     steps{
                         git branch: 'master',
-                            url: 'https://github.com/soloma70/my_site.git'        
+                            url: 'https://github.com/soloma70/webapp_blog.git'        
                         }
                 }
 /* ---------------- Run Unit Tests after Pull Request --------------------- */
@@ -90,7 +90,7 @@ pipeline {
         stage('Deploy App') {
             agent { label 'ubuntu-master' }
             environment { 
-                AWS_SHARED_CREDENTIALS_FILE='/var/lib/jenkins/.aws/aws'
+                AWS_SHARED_CREDENTIALS_FILE='/tmp/.aws/aws'
                 USER_NAME_REMOTE = 'ubuntu'
             }
 
