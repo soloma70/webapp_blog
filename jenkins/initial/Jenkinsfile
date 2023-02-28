@@ -90,7 +90,7 @@ pipeline {
         stage('Deploy App') {
             agent { label 'ubuntu-master' }
             environment { 
-                AWS_SHARED_CREDENTIALS_FILE='/tmp/.aws/aws'
+                AWS_SHARED_CREDENTIALS_FILE='/var/lib/jenkins/.aws/aws'
                 USER_NAME_REMOTE = 'ubuntu'
             }
 
